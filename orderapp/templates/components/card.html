@@ -1,0 +1,14 @@
+{% load components %}
+
+<div class="card">
+    <div class="card-header">
+        {% render_slot slots.header %}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            {% render_slot slots.title %}
+        </h5>
+
+        {% render_slot slots.inner_block %}
+    </div>
+</div>

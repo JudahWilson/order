@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+{% load components %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+  {% card %}
+    {% slot header %} Featured {% endslot %}
+    {% slot title %} Card title {% endslot %}
+    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  {% endcard %}
+
+{% endblock %}

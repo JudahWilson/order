@@ -13,3 +13,8 @@ admin.site.register(
     OrderUser,
     OrderUserAdmin,
 )
+
+admin.site.register(Organization)
+admin.site.register(Contact)
+admin.site.register(Account)
+admin.site.register(Ticket)

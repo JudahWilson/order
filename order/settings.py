@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'custom_user',
     'orderapp',
     'debug_toolbar', # The debug toolbar (installed separately via pip)
+    "django_web_components",
 ]
 
 
