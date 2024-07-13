@@ -17,9 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 import debug_toolbar
+from orderapp.views import api_views
+from rest_framework import routers
+
+################
+# API VIEWS
+################
+router = routers.DefaultRouter()
+#! Manually register viewsets to routers
+router.register(r'users', api_views.UserViewSet)
+router.register(r'groups', api_views.GroupViewSet)
 
 urlpatterns = [
+    path('admin/doc/', include('django.contrib.admindocs.urls')), # auto docs
     path('admin/', admin.site.urls),
-    path('__debug__/', include(debug_toolbar.urls)), # add this line
+    path('__debug__/', include(debug_toolbar.urls)), #  Debug toolbar
     path('',include('orderapp.urls')),
+    path('api/v1/', include(router.urls)) # API
+    
 ]

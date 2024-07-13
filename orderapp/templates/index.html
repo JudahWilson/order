@@ -6,11 +6,23 @@
 
 {% block content %}
 
-  {% card %}
+  <h1>{{user.username}}</h1>
+
+  {# RANDOM CARD #}
+  {% Card %}
     {% slot header %} Featured {% endslot %}
     {% slot title %} Card title {% endslot %}
     <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
-  {% endcard %}
+  {% endCard %}
+
+  <br>
+
+
+  {# TICKETS #}
+  {% for t in tickets %}
+    <br>
+    {% TicketView ticket=t %}{% endTicketView %}
+  {% endfor %}
 
 {% endblock %}

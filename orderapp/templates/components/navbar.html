@@ -10,30 +10,28 @@
                 <div class="left"></div>
                 <div class="right"></div>
             </div>
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><div><i class="fas fa-tachometer-alt"></div></i>Dashboard</a>
-            </li>
             <li class="nav-item active">
-                <a class="nav-link" href="javascript:void(0);"><div><i class="far fa-address-book"></div></i>Address Book</a>
+                <a class="nav-link d-flex" href="javascript:void(0);"><div class="icon-spacing"><i class="fas fa-tachometer-alt"></i></div>Tickets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><div><i class="far fa-clone"></i></div>Components</a>
+                <a class="nav-link d-flex" href="javascript:void(0);"><div class="icon-spacing"><i class="far fa-address-book"></i></div>Accounts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><div><i class="far fa-calendar-alt"></div></i>Calendar</a>
+                <a class="nav-link d-flex" href="javascript:void(0);"><div class="icon-spacing"><i class="far fa-clone"></i></div>Contacts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><div><i class="far fa-chart-bar"></div></i>Charts</a>
+                <a class="nav-link d-flex" href="javascript:void(0);"><div class="icon-spacing"><i class="far fa-calendar-alt"></i></div>Calendar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0);"><div><i class="far fa-copy"></i></div>Documents</a>
+                <a class="nav-link d-flex" href="javascript:void(0);"><div class="icon-spacing"><i class="far fa-chart-bar"></i></div>Analytics</a>
             </li>
         </ul>
     </div>
 </nav>
+
 <script>
     // ---------Responsive-navbar-active-animation-----------
-    function test(){
+    function navbarAnimation(){
         var tabsNewAnim = $('#navbarSupportedContent');
         var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
         var activeItemNewAnim = tabsNewAnim.find('.active');
@@ -63,14 +61,14 @@
         });
     }
     $(document).ready(function(){
-        setTimeout(function(){ test(); });
+        setTimeout(function(){ navbarAnimation(); });
     });
     $(window).on('resize', function(){
-        setTimeout(function(){ test(); }, 500);
+        setTimeout(function(){ navbarAnimation(); }, 500);
     });
     $(".navbar-toggler").click(function(){
         $(".navbar-collapse").slideToggle(300);
-        setTimeout(function(){ test(); });
+        setTimeout(function(){ navbarAnimation(); });
     });
 
 

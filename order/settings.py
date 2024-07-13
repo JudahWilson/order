@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages', # used to display one-time message to user
     'django.contrib.staticfiles', # for serving static files (images, css, etc.)
     'custom_user',
-    'orderapp',
+    'orderapp',# THE APP
     'debug_toolbar', # The debug toolbar (installed separately via pip)
     "django_web_components",
+    'rest_framework',
+    'django.contrib.admindocs',# auto docs
 ]
 
 
@@ -53,8 +55,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'django.middleware.clickjacking.XFrameOptionsMiddleware', 
+    "debug_toolbar.middleware.DebugToolbarMiddleware", # Debug toolbar
+    'django.contrib.admindocs.middleware.XViewMiddleware', # auto docs
 ]
 
 ROOT_URLCONF = 'order.urls'
@@ -129,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    #...
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -140,3 +147,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}

@@ -13,8 +13,9 @@ admin.site.register(
     OrderUser,
     OrderUserAdmin,
 )
-
+#! Manually register models to admin
 admin.site.register(Organization)
 admin.site.register(Contact)
 admin.site.register(Account)
 admin.site.register(Ticket)
+admin.site.register(OrgTicketCounter)
