@@ -30,9 +30,9 @@ router.register(r'groups', api_views.GroupViewSet)
 
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')), # auto docs
-    path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)), #  Debug toolbar
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('',include('orderapp.urls')),
     path('api/v1/', include(router.urls)) # API
-    
 ]

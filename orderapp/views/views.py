@@ -4,12 +4,15 @@ from .. import forms
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
 from ..models import *
+from django.http import HttpRequest
 
 
-def index(request):
+@login_required
+def index(request: HttpRequest):
+    user = request.user
     t=Ticket.objects.filter()
     
-    return render(request, 'index.html', {'tickets': t})
+    return render(request, 'index.html', {'tickets': t, 'user': user})
 
 
 '''
@@ -20,6 +23,7 @@ def login_view(request):
     
     if request.method == 'POST':
         form = forms._AuthenticationForm(request.POST)
+        print(form.cleansed_data)
         if form.is_valid():
             user = authenticate(email=form.cleaned_data['email'], password=form.cleaned_data['password'])
             if user is not None:

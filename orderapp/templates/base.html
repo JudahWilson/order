@@ -41,7 +41,7 @@
 
 <body>
     {% Navbar %}{% endNavbar %}
-
+    <div style="padding: 20px;" class="text-end">{{"Welcome, "|add:user.first_name}}</div>
     <div id="content">
         {% block content %}{% endblock %}
     </div>

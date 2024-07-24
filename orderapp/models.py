@@ -10,6 +10,8 @@ class OrderUser(AbstractEmailUser):
     '''
     Custom user class
     '''
+    first_name = models.CharField(max_length=30, blank=True, null=True)
+    last_name = models.CharField(max_length=30, blank=True, null=True)
     pass
 
 

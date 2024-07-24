@@ -13,7 +13,7 @@ from .forms import *
 urlpatterns = [
     # path('example/', views.example, name='example'),
     path('', views.index, name='index'),
-    path('login/', views.login_view, name='login'),
+    # path('login/', views.login_view, name='login'),
 ]
 
 # if CSS and JS hosted from cloud server, prefix below line with "if settings.DEBUG:"
